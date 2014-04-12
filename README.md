@@ -21,5 +21,5 @@ and go to [localhost:8080](http://localhost:8080).
 
 ## License
 
-licensed under the MIT license.
+Licensed under the MIT license.
  
