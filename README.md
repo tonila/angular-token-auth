@@ -13,15 +13,11 @@ npm install
 Run the example:
 
 ```sh
-node auth.server.js
+node server.js
 ```
 
 and go to [localhost:8080](http://localhost:8080).
  
- 
-### More advanced scenarios?
-
-For a complete example handling social providers, enterprise authentication with LDAP/Active Directoty, and user/password, check out [Auth0 Angular integration](https://github.com/auth0/auth0-angular).
 
 ---
  
