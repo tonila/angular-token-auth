@@ -17,4 +17,9 @@ node server.js
 ```
 
 and go to [localhost:8080](http://localhost:8080).
+
+
+## License
+
+Node-DBI is licensed under the MIT license.
  
