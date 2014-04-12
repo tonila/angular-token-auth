@@ -2,7 +2,7 @@ var express = require('express');
 var jwt = require('jsonwebtoken');  //https://npmjs.org/package/node-jsonwebtoken
 var expressJwt = require('express-jwt'); //https://npmjs.org/package/express-jwt
 
-var secret = 'this is the secret secret secret 12356';
+var secret = 'very very secret not any heartbleed';
 
 var app = express();
 
@@ -11,7 +11,7 @@ app.use('/api', expressJwt({secret: secret}));
 
 app.use(express.json());
 app.use(express.urlencoded());
-app.use('/', express.static(__dirname + '/'));
+app.use('/', express.static(__dirname + '/public'));
 
 app.use(function(err, req, res, next){
   if (err.constructor.name === 'UnauthorizedError') {
@@ -40,10 +40,17 @@ app.post('/authenticate', function (req, res) {
   res.json({ token: token });
 });
 
-app.get('/api/restricted', function (req, res) {
-  console.log('user ' + req.user.email + ' is calling /api/restricted');
+app.get('/api/view1', function (req, res) {
+  console.log('user ' + req.user.email + ' is calling /api/view1');
   res.json({
-    name: 'foo'
+    name: 'View1 Data'
+  });
+});
+
+app.get('/api/view2', function (req, res) {
+  console.log('user ' + req.user.email + ' is calling /api/view2');
+  res.json({
+    name: 'View2 Data'
   });
 });
 
